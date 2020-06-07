@@ -1,5 +1,6 @@
 <template>
  <v-app>
+    <core-loader ref="loader" />
     <router-view/>
  </v-app>
 </template>

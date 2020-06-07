@@ -18,7 +18,6 @@
         </v-btn>
       </router-link>
     </v-app-bar>
-    <core-loader ref="loader" />
     <v-content>
       <router-view/>
     </v-content>
@@ -26,6 +25,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'Dashboard',
   data () {
@@ -36,10 +36,8 @@ export default {
       this.$i18n.locale = val
     }
   },
-  mounted(){
-    this.$root.$loader = this.$refs.loader.show
-  },
   methods: {
+    ...mapActions('userauth', ['resetUser']),
     logout(){
       this.resetUser()
       this.$router.push('/login')
