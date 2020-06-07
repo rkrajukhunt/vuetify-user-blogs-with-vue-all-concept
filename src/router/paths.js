@@ -1,11 +1,29 @@
 export default [
   {
     path: '/',
-    name: 'UserList',
-    view: 'UserList',
+    name: 'Layout',
+    view: 'Layout',
     meta: {
       requiresAuth: true
-    }
+    },
+    children:[
+      {
+        path: '',
+        name: 'UserList',
+        view: 'UserList',
+        meta: {
+          requiresAuth: true
+        },
+      },    
+      {
+        path: '/blog/:id',
+        name: 'blog',
+        view: 'BlogList',
+        meta: {
+          requiresAuth: true
+        }
+      }
+    ]
   },
   {
     path: '/login',
@@ -15,12 +33,4 @@ export default [
       requiresVisitor: true
     }
   },
-  {
-    path: '/blog/:id',
-    name: 'blog',
-    view: 'BlogList',
-    meta: {
-      requiresAuth: true
-    }
-  }
 ]

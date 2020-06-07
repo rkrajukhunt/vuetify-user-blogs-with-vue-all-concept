@@ -12,7 +12,6 @@ import './components'
 
 sync(store, router)
 
-
 // Configure the Router Gaurd
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
@@ -25,8 +24,6 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
-
-
 Vue.config.productionTip = false
 
 new Vue({
