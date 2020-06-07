@@ -28,5 +28,22 @@
 <script>
 export default {
   name: 'Dashboard',
+  data () {
+    return { locale: 'en' }
+  },
+  watch: {
+    locale (val) {
+      this.$i18n.locale = val
+    }
+  },
+  mounted(){
+    this.$root.$loader = this.$refs.loader.show
+  },
+  methods: {
+    logout(){
+      this.resetUser()
+      this.$router.push('/login')
+    }
+  }
 }
 </script>
