@@ -12,7 +12,7 @@
     "url": "https://github.com/rkrajukhunt/vuetify-user-blogs-with-vue-all-concept.git"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "core-js": "^3.3.2",
     "store": "^2.0.12",
     "vee-validate": "^3.3.2",
